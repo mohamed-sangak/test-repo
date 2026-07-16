@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose');
 
 const mainSchema = new mongoose.Schema(
   {
@@ -6,7 +6,9 @@ const mainSchema = new mongoose.Schema(
     label: { type: String, required: true },
   },
   { timestamps: true },
-)
+);
 
+const Field = mongoose.model('mainTable', mainSchema);
 
-export const Field = mongoose.model('mainTable', mainSchema)
+// Exporting as a named export
+module.exports = { Field };
